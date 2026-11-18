@@ -1,0 +1,55 @@
+/* Prism Harvest — page chrome. The game itself is drawn entirely on canvas;
+   this sheet only frames it: a dark room, a glowing stage, one line of help. */
+
+:root {
+  --room: #07060e;
+  --ink: #cfc8ee;
+  --dim: #7a739e;
+  --glow: #59f2d6;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: radial-gradient(1200px 700px at 50% 30%, #141126 0%, var(--room) 62%);
+  color: var(--ink);
+  font-family: "Avenir Next", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+#stage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 24px 12px;
+}
+
+canvas#game {
+  width: min(96vw, 1060px);
+  height: auto;
+  aspect-ratio: 8 / 5;
+  display: block;
+  border-radius: 14px;
+  background: #0b0920;
+  box-shadow:
+    0 0 0 1px rgba(137, 124, 255, 0.35),
+    0 0 44px rgba(89, 242, 214, 0.14),
+    0 24px 70px rgba(0, 0, 0, 0.6);
+  touch-action: none;
+}
+
+#hint {
+  margin: 0;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dim);
+  text-align: center;
+}
+
+#hint b { color: var(--glow); font-weight: 600; }
